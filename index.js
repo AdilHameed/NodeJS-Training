@@ -7,13 +7,25 @@
 
 // creating server without using any library
 
-const http = require("http");
+// const http = require("http");
 const PORT = 5000;
 
-const server = http.createServer((req, res) => {
-  res.end("Welcome to nodeJs");
+// const server = http.createServer((req, res) => {
+//   res.end("Welcome to nodeJs");
+// });
+
+// server.listen(PORT, (req, res) => {
+//   console.log("server is up and running");
+// });
+
+const express = require("express");
+
+const app = express();
+
+app.get("/", (req, res) => {
+  res.end("Welcome to ExpressJs");
 });
 
-server.listen(PORT, (req, res) => {
+app.listen(PORT, (req, res) => {
   console.log("server is up and running");
 });
