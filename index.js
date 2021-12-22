@@ -7,16 +7,18 @@
 
 // creating server without using any library
 
-// const http = require("http");
-// const PORT = 5000;
+const http = require("http");
+const { readStream } = require("./Stream.js");
+const PORT = 5000;
 
-// const server = http.createServer((req, res) => {
-//   res.end("Welcome to nodeJs");
-// });
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plane" });
+  readStream.pipe(res);
+});
 
-// server.listen(PORT, (req, res) => {
-//   console.log("server is up and running");
-// });
+server.listen(PORT, (req, res) => {
+  console.log("server is up and running");
+});
 
 // const express = require("express");
 
@@ -54,4 +56,5 @@
 // console.log(sum.addFunc(sum.PI, 4));
 
 // require("./emitterFile.js");
-require("./fileSys.js");
+// require("./fileSys.js");
+// require("./Stream.js");
