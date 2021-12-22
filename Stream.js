@@ -1,10 +1,10 @@
 const fs = require("fs");
 let i = 1;
 module.exports.readStream = fs.createReadStream(
-  __dirname + "/readableData.txt",
+  __dirname + "/index.html",
   "utf-8"
 );
-module.exports.writeStream = fs.createWriteStream(__dirname + "/writeData.txt");
+// module.exports.writeStream = fs.createWriteStream(__dirname + "/writeData.txt");
 
 // readStream.on("data", (chunksData) => {
 //   let str = "";

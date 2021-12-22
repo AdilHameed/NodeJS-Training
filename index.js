@@ -12,7 +12,7 @@ const { readStream } = require("./Stream.js");
 const PORT = 5000;
 
 const server = http.createServer((req, res) => {
-  res.writeHead(200, { "Content-Type": "text/plane" });
+  res.writeHead(200, { "Content-Type": "text/html" });
   readStream.pipe(res);
 });
 
