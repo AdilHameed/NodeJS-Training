@@ -12,8 +12,15 @@ const { readStream } = require("./Stream.js");
 const PORT = 5000;
 
 const server = http.createServer((req, res) => {
-  res.writeHead(200, { "Content-Type": "text/html" });
-  readStream.pipe(res);
+  res.writeHead(200, { "Content-Type": "application/json" });
+  //   readStream.pipe(res);
+  const data = {
+    name: "XYZ",
+    age: 23,
+    address: "9/sangam vihar",
+    city: "Delhi",
+  };
+  res.end(JSON.stringify(data));
 });
 
 server.listen(PORT, (req, res) => {
