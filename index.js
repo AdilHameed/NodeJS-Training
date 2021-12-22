@@ -8,7 +8,7 @@
 // creating server without using any library
 
 // const http = require("http");
-const PORT = 5000;
+// const PORT = 5000;
 
 // const server = http.createServer((req, res) => {
 //   res.end("Welcome to nodeJs");
@@ -18,14 +18,39 @@ const PORT = 5000;
 //   console.log("server is up and running");
 // });
 
-const express = require("express");
+// const express = require("express");
 
-const app = express();
+// const app = express();
 
-app.get("/", (req, res) => {
-  res.end("Welcome to ExpressJs");
-});
+// app.get("/", (req, res) => {
+//   res.end("Welcome to ExpressJs");
+// });
 
-app.listen(PORT, (req, res) => {
-  console.log("server is up and running");
-});
+// app.listen(PORT, (req, res) => {
+//   console.log("server is up and running");
+// });
+
+// let time = 0;
+// const timer = setInterval(() => {
+//   time += 2;
+//   if (time > 6) {
+//     clearInterval(timer);
+//   }
+//   console.log(`${time} have passed`);
+// }, 2000);
+
+// console.log(__dirname); //tell the directory where I am
+// console.log(__filename); //gives the directory as well as current file
+
+// const data = require("./file1.js");
+// const { a, func1, sum } = require("./file1.js"); //destructurring
+
+// // console.log(data.a);
+// // data.func1("fissionite");
+
+// console.log(a);
+// func1("fissionites");
+
+// console.log(sum.addFunc(sum.PI, 4));
+
+require("./emitterFile.js");
