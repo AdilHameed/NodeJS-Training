@@ -1,6 +1,10 @@
 const fs = require("fs");
 let i = 1;
-module.exports.readStream = fs.createReadStream(
+module.exports.readStreamText = fs.createReadStream(
+  __dirname + "/writeFile.txt",
+  "utf-8"
+);
+module.exports.readStreamHtml = fs.createReadStream(
   __dirname + "/index.html",
   "utf-8"
 );

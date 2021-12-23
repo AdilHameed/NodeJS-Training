@@ -7,37 +7,45 @@
 
 // creating server without using any library
 
-const http = require("http");
-const { readStream } = require("./Stream.js");
-const PORT = 5000;
+// const http = require("http");
+// const { readStream } = require("./Stream.js");
+// const PORT = 5000;
 
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { "Content-Type": "application/json" });
-  //   readStream.pipe(res);
-  const data = {
-    name: "XYZ",
-    age: 23,
-    address: "9/sangam vihar",
-    city: "Delhi",
-  };
-  res.end(JSON.stringify(data));
-});
-
-server.listen(PORT, (req, res) => {
-  console.log("server is up and running");
-});
-
-// const express = require("express");
-
-// const app = express();
-
-// app.get("/", (req, res) => {
-//   res.end("Welcome to ExpressJs");
+// const server = http.createServer((req, res) => {
+//   res.writeHead(200, { "Content-Type": "application/json" });
+//   //   readStream.pipe(res);
+//   const data = {
+//     name: "XYZ",
+//     age: 23,
+//     address: "9/sangam vihar",
+//     city: "Delhi",
+//   };
+//   res.end(JSON.stringify(data));
 // });
 
-// app.listen(PORT, (req, res) => {
+// server.listen(PORT, (req, res) => {
 //   console.log("server is up and running");
 // });
+
+const express = require("express");
+// const { readStreamText, readStreamHtml } = require("./Stream.js");
+const PORT = 5000;
+
+const app = express();
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/index.html");
+});
+app.get("/about", (req, res) => {
+  res.send("This is all about Express");
+});
+app.get("/data", (req, res) => {
+  res.send({ name: "express", type: "Node FrameWork" });
+});
+
+app.listen(PORT, (req, res) => {
+  console.log("server is up and running");
+});
 
 // let time = 0;
 // const timer = setInterval(() => {
